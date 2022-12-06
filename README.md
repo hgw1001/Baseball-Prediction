@@ -1,2 +1,36 @@
 # Baseball-Prediction
 This is a prediction model in which the user enters two baseball teams and the program displays the winner of those two teams. 
+The winner is selcted based on the rankings of the two teams and who has the higher ranking with the exception of 20% of the time a switch of who wins to account for randomness. 
+
+Below displays how accurate the model is and how often it correctly predicts or predicts within a range. 
+Correctly predicts 	8/30 teams 
+Within 1 ranking	15/30 teams 
+Within 2 rankings 	4/30 teams 
+Within 3 rankings 	1/30 teams 
+Within 4 rankings 	2/30 teams 
+
+Directions: 
+1. Download the dataset named Dataset_Final which is a csv file. 
+2. Open the R File and ensure the working directory is the same as where the data set is saved.
+3. Type winner() to call the function 
+4. Follow the directions that are displayed. Enter 2 Teams to see the winner. If the input is incorrect, you will be promted to reneter the teams. 
+
+The model is: 
+winner <- function(){
+mydata=read.table("Dataset_Final.csv",header=T, sep=",")
+team <- c("San Francisco Giants", "Los Angeles Dodgers", "Tampa Bay Rays", "Houston Astros", "Milwaukee Brewers", "Chicago White Sox", "New York Yankees", "Boston Red Sox", "Toronto Blue Jays", "St. Louis Cardinals", "Seattle Mariners", "Atlanta Braves", "Oakland Athletics", "Cincinnati Reds", "Philadelphia Phillies", "Cleveland Guardians", "San Diego Padres", "New York Mets", "Los Angeles Angels", "Detroit Tigers", "Colorado Rockies", "Kansas City Royals", "Minnesota Twins", "Chicago Cubs", "Miami Marlins", "Washington Nationals", "Pittsburgh Pirates", "Texas Rangers", "Baltimore Orioles", "Arizona Diamondbacks")
+print(team)
+mymodel=lm(Rankings2022~+FIP2022+R2022+Payroll2022+LOB2022+FIP2021+allTimeAS2021+BAbipA2022,data=mydata)
+number <- 0
+while (number==0)
+{var1=readline(prompt = "Enter Team 1 from the above list: ")
+for(i in 1:length(mymodel$fitted.values)){if (mydata$ï..Tm[i]==var1) number=1}}
+integer <- 0
+while (integer==0)
+{var2=readline(prompt = "Enter Team 2 from the above list: ")
+for(i in 1:length(mymodel$fitted.values)){if ((mydata$ï..Tm[i]==var2) && (var2!=var1)) integer=1}}
+for(i in 1:length(mymodel$fitted.values)){if (mydata$ï..Tm[i]==var1) val1=mymodel$fitted.values[i] else if (mydata$ï..Tm[i]==var2) val2=mymodel$fitted.values[i]}
+if(val1<val2) winner=var1 else if (val1>val2) winner=var2 else winner="tie"
+random <- runif(1)
+if(winner==var1 && random <= 0.2) winner=var2 else if (winner==var2 && random <= .2) winner=var1 
+return(paste("The winner is ", winner, "."))}
