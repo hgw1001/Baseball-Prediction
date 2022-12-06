@@ -3,15 +3,15 @@ This is a prediction model in which the user enters two baseball teams and the p
 The winner is selcted based on the rankings of the two teams and who has the higher ranking with the exception of 20% of the time a switch of who wins to account for randomness. 
 
 Below displays how accurate the model is and how often it correctly predicts or predicts within a range. 
-Correctly predicts 	8/30 teams 
-Within 1 ranking	15/30 teams 
-Within 2 rankings 	4/30 teams 
-Within 3 rankings 	1/30 teams 
-Within 4 rankings 	2/30 teams 
+- Correctly predicts 	8/30 teams 
+- Within 1 ranking	15/30 teams 
+- Within 2 rankings 	4/30 teams 
+- Within 3 rankings 	1/30 teams 
+- Within 4 rankings 	2/30 teams 
 
 Directions: 
-1. Download the dataset named Dataset_Final which is a csv file. 
-2. Open the R File and ensure the working directory is the same as where the data set is saved.
+1. Download the dataset named Dataset_Final which is a csv file. You must be signed in in order to download this file.
+2. Download and open the R File and ensure the working directory is the same as where the data set is saved.
 3. Type winner() to call the function 
 4. Follow the directions that are displayed. Enter 2 Teams to see the winner. If the input is incorrect, you will be promted to reneter the teams. 
 
