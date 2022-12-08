@@ -13,7 +13,7 @@ Directions:
 1. Download the dataset named Dataset_Final which is a csv file. You must be signed in in order to download this file.
 2. Download and open the R File and ensure the working directory is the same as where the data set is saved.
 3. Type winner() to call the function 
-4. Follow the directions that are displayed. Enter 2 Teams to see the winner. If the input is incorrect, you will be promted to reneter the teams. 
+4. Follow the directions that are displayed. Enter 2 Teams to see the winner. If the input is incorrect, you will be prompted to reenter the teams. 
 
 The model is: 
 winner <- function(){
